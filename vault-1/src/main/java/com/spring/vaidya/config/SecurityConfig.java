@@ -64,7 +64,7 @@ public class SecurityConfig {
 						// Protected endpoints (require authentication)
 						.requestMatchers(
 								"/api/slots/{slotId}", "/api/slots/create", "/api/slots/{slotId}/availability",
-								"doctor/all", "/api/slots/search?date=${selectedDate}&userId=${user.userId}"
+								"doctor/all", "/api/slots/search?date=${selectedDate}&userId=${user.userId}","/api/slots/**"
 						).authenticated()
 				)
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Use stateless sessions (no server-side session storage)
