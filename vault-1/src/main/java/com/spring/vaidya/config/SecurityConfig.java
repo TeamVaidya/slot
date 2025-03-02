@@ -59,11 +59,11 @@ public class SecurityConfig {
 						// Publicly accessible endpoints
 						.requestMatchers(
 								"/user/new", "/doctor/confirm-account", "doctor/register",
-								"/user/login", "/user/authenticate", "/user/welcome", "login/doctor","/slot/**","/actuator/**"
+								"/user/login", "/user/authenticate", "/user/welcome", "login/doctor","/slot/**", "/api/slots/{slotId}", "/actuator/**"
 						).permitAll()
 						// Protected endpoints (require authentication)
 						.requestMatchers(
-								"/api/slots/{slotId}", "/api/slots/create", "/api/slots/{slotId}/availability",
+								 "/api/slots/create", "/api/slots/{slotId}/availability",
 								"doctor/all", "/api/slots/search?date=${selectedDate}&userId=${user.userId}","/api/slots/**"
 						).authenticated()
 				)
